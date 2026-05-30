@@ -1,0 +1,103 @@
+# LinkedInScript Configuration
+# Copy this file to config.yaml and customize your settings.
+# Run: python main.py (first run will copy this automatically)
+
+search:
+  # Keywords to search (each triggers a separate LinkedIn query)
+  keywords:
+    - "software engineer intern"
+    - "SDE intern"
+    - "software developer intern"
+    - "data science intern"
+    - "ML intern"
+    - "backend developer intern"
+    - "frontend developer intern"
+    - "full stack intern"
+    - "DevOps intern"
+
+  # Locations to search (tool iterates keyword x location combinations)
+  locations:
+    - "Bengaluru, Karnataka, India"
+    - "India"
+
+  # Max results per keyword-location combination (25 per page, 75 = 3 pages)
+  results_wanted: 75
+
+  # Only fetch jobs posted within this many hours
+  hours_old: 24
+
+# Rate limiting between scrape calls
+scraping:
+  min_delay: 5
+  max_delay: 12
+
+companies:
+  # Priority companies - always included, salary filter waived
+  watchlist:
+    - "Google"
+    - "Microsoft"
+    - "Amazon"
+    - "Flipkart"
+    - "Razorpay"
+    - "Zerodha"
+    - "PhonePe"
+    - "Atlassian"
+    - "Adobe"
+
+  # Companies to always reject
+  blocklist:
+    - "TCS"
+    - "Infosys"
+    - "Wipro"
+    - "HCL"
+    - "Cognizant"
+    - "Tech Mahindra"
+    - "Capgemini"
+    - "Accenture"
+
+filters:
+  min_salary_monthly: 30000
+
+  # Bangalore area aliases for location matching (case-insensitive)
+  location_aliases:
+    - "bangalore"
+    - "bengaluru"
+    - "bengaluru urban"
+    - "whitefield"
+    - "electronic city"
+    - "koramangala"
+    - "indiranagar"
+    - "hsr layout"
+    - "marathahalli"
+
+  # Keywords that indicate remote/flexible location (case-insensitive)
+  remote_keywords:
+    - "remote"
+    - "work from home"
+    - "wfh"
+    - "pan india"
+    - "anywhere in india"
+    - "hybrid"
+
+# Email notifications (functional in Phase 4)
+email:
+  enabled: false
+  smtp_host: "smtp.gmail.com"
+  smtp_port: 587
+  sender_email: "your.email@gmail.com"
+  recipient_email: "your.email@gmail.com"
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/run.log"
+  max_size_mb: 5
+  backup_count: 3
+
+# Task Scheduler settings (used by scripts/install-task.ps1)
+schedule:
+  time: "08:00"  # Daily run time (24h format HH:MM)
+
+# Database maintenance
+database:
+  retention_days: 90  # Auto-purge entries older than this many days (D-15)
