@@ -1,0 +1,38 @@
+# User config (contains personal settings)
+config.yaml
+
+# Secrets
+.env
+
+# Logs
+logs/*.log
+logs/*.log.*
+
+# Database and auth state (all runtime data is local-only)
+data/*.db
+data/*.json
+data/.reauth_needed
+data/.reauth_alerted
+
+# Output (fallback HTML digests)
+output/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
